@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+<center>
+    <table>
+    <h1>cart page</h1>
+    <tr>
+        <th>Sl no</th>
+        <th>product</th>
+        <th>price</th>
+        <th>Quantity</th>
+        <th>Total price</th>
+        <th>action</th>
+    </tr>
+    {% for i in cart_product %}
+    <td>{{i}}</td>
+    <td>{{i.product.pname}}</td>
+    <td>{{i.product.price}}</td>
+    <td><a href="{% url 'minus' i.id %}"></a>{{i.product.quantity}}<a href="{% url 'plus' i.id %}"></a></td>
+    <td>{{i.total_price}}</td>
+    <td><a href="{% url 'remove' i.id %}">Remove</a></td>
+    {% endfor %}
+    </table>
+    <h1>Total price:{{TA}}</h1>
+</center>
+{% endblock %}

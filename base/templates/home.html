@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+{% block content %}
+    <h1>homepage</h1>
+    <center>
+        {% if messages %}
+        {% for i in messages %}
+            <h2 style="color: red;">{{i}}</h2>
+        {% endfor %}
+    {% endif %}
+
+    <form action="" method="GET">
+        {% for i in category %}
+            <input type="submit" value="{{i}}" name="cat">
+        {% endfor %}
+    </form>
+
+    {% for i in all_products %}
+        <img src="{{i.pimage.url}}" alt="" style="height: 200px; width: 200px; "><br><br>
+        <h2>{{i.pname}}</h2><br>
+        <h3>{{i.price}}</h3><br>
+        <a href="{% url 'add_to_cart' i.id %}">ADD To Cart</a> <br> <br>
+        <a href="{% url 'details' i.id %}">View details</a> <br> <br>
+    {% endfor %}
+    </center>
+
+{% endblock %}

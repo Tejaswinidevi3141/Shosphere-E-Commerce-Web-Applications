@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% block content %}
+<center>
+    <h2>this is detailes page</h2>
+    <img src="{{prodiuct.pimage..url}}" alt="">
+    <h2>{{product.pname}}</h2>
+    <h2>{{product.price}}</h2>
+    <h2>{{product.pdescription}}</h2>
+    <h2>{{product. stock}}</h2>
+    {% if product.is_available %}
+        <h2>available</h2>
+    {% endif %}
+
+
+    <h1>Related Product</h1>
+    {% for i in category_product %}
+    <img src="{}" alt="">    
+</center>
+{% endblock %}

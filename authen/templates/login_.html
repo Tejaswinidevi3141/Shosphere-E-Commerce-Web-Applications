@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<center>
+    <h1>Login</h1>
+    {% if messages %}
+        {% for i in messages %}
+            <h3>{{i}}</h3>
+        {% endfor %}
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="">User Name:</label>
+        <input type="text" name="uname"> <br><br>
+
+        <label for="">Password:</label>
+        <input type="text" name="pasw"> <br><br>
+
+        <button type="submit">LOGIN</button>
+
+        <p>new user? <a href="{% url 'register' %}">REGISTER</a></p><br>
+        <a href="{% url 'forget_pasw' %}">FORGET PASSWORD</a>
+    </form>
+</center>
+{% endblock %}

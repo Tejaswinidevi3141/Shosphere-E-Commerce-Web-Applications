@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Add Address</h1>
+<center>
+    <a href="{% url 'add_address' %}">Add Address</a>
+    {% for i in address %}
+    {{i.fullname}} <br>
+    {{i.mobile}} <br>
+    {{i.address_line}} <br>
+    {{i.city}} <br>
+    {{i.state}} <br>
+    {{i.pincode}} <br>
+    <a href="{% url 'update_address' i.id %}">update address</a>
+    {% endfor %}
+    
+</center>
+{% endblock %}

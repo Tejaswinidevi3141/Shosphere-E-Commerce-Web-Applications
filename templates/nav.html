@@ -1,0 +1,17 @@
+<nav>
+    <div class="logo">
+        <h1>Shosphere</h1>
+    </div>
+    <div class="links">
+        <a href="{% url 'home' %}">HOME</a>
+        <a href="{% url 'cartpage' %}">CART</a>
+        <a href="{% url 'address_list' %}">ADDRESS</a>
+        <a href="{% url 'add_address' %}">ORDERS</a>
+        <a href="{% url 'login_' %}">LOGIN</a>
+        <a href="{% url 'logout_' %}">LOGOUT</a>
+        <a href="{% url 'profile' %}">PROFILE ({{request.user.username}})</a>
+        <a href="{% url 'register' %}">REGISTER</a>
+        <a href="">CONTACT</a>
+        <a href="">KNOW US</a>
+    </div>
+</nav>
